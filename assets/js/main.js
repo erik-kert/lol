@@ -291,6 +291,15 @@ var settings = {
 					resetForms: true,
 					side: 'right'
 				});
+        
+        <div id='map' style='width: 400px; height: 300px;'></div>
+            <script>
+                mapboxgl.accessToken = 'pk.eyJ1IjoiZXJpa2tlcnQiLCJhIjoiY2o4YTl5MXhlMGFobjMxbzAwamhiMnkyMCJ9.7FN4zVqKFO7J0hy6vnnqQQ';
+                var map = new mapboxgl.Map({
+                container: 'map',
+                    style: 'mapbox://styles/mapbox/streets-v9'
+                });
+            </script>
 
 		// Header.
 			if (skel.vars.IEVersion < 9)

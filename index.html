@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Hielo by TEMPLATED</title>
+		<title>Eesi Tenerife Tuurid</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -22,7 +22,7 @@
 		<!-- Nav -->
 			<nav id="menu">
 				<ul class="links">
-					<li><a href="index.html">Home</a></li>
+					<li><a href="index.html">Kodu</a></li>
 					<li><a href="generic.html">Generic</a></li>
 					<li><a href="elements.html">Elements</a></li>
 				</ul>
@@ -30,51 +30,63 @@
 
 		<!-- Banner -->
 			<section class="banner full">
-				<article>
-					<img src="images/slide01.jpg" alt="" />
-					<div class="inner">
-						<header>
-							<p>A free responsive web site template by <a href="https://templated.co">TEMPLATED</a></p>
-							<h2>Hielo</h2>
-						</header>
-					</div>
-				</article>
-				<article>
-					<img src="images/slide02.jpg" alt="" />
-					<div class="inner">
-						<header>
-							<p>Lorem ipsum dolor sit amet nullam feugiat</p>
-							<h2>Magna etiam</h2>
-						</header>
-					</div>
-				</article>
-				<article>
-					<img src="images/slide03.jpg"  alt="" />
-					<div class="inner">
-						<header>
-							<p>Sed cursus aliuam veroeros lorem ipsum nullam</p>
-							<h2>Tempus dolor</h2>
-						</header>
-					</div>
-				</article>
-				<article>
-					<img src="images/slide04.jpg"  alt="" />
-					<div class="inner">
-						<header>
-							<p>Adipiscing lorem ipsum feugiat sed phasellus consequat</p>
-							<h2>Etiam feugiat</h2>
-						</header>
-					</div>
-				</article>
-				<article>
-					<img src="images/slide05.jpg"  alt="" />
-					<div class="inner">
-						<header>
-							<p>Ipsum dolor sed magna veroeros lorem ipsum</p>
-							<h2>Lorem adipiscing</h2>
-						</header>
-					</div>
-				</article>
+<head>
+    <meta charset='utf-8' />
+    <title></title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.40.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.40.1/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
+</head>
+
+<style>
+    #menu {
+        position: absolute;
+        background: #fff;
+        padding: 10px;
+        font-family: 'Open Sans', sans-serif;
+    }
+</style>
+
+<div id='map'></div>
+<div id='menu'>
+    <input id='basic' type='radio' name='rtoggle' value='basic' checked='checked'>
+    <label for='basic'>basic</label>
+    <input id='streets' type='radio' name='rtoggle' value='streets'>
+    <label for='streets'>streets</label>
+    <input id='bright' type='radio' name='rtoggle' value='bright'>
+    <label for='bright'>bright</label>
+    <input id='light' type='radio' name='rtoggle' value='light'>
+    <label for='light'>light</label>
+    <input id='dark' type='radio' name='rtoggle' value='dark'>
+    <label for='dark'>dark</label>
+    <input id='satellite' type='radio' name='rtoggle' value='satellite'>
+    <label for='satellite'>satellite</label>
+</div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiZXJpa2tlcnQiLCJhIjoiY2o4YTl5MXhlMGFobjMxbzAwamhiMnkyMCJ9.7FN4zVqKFO7J0hy6vnnqQQ';
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/basic-v9',
+    zoom: 9.3,
+    center: [-16.466, 28.287]
+});
+
+var layerList = document.getElementById('menu');
+var inputs = layerList.getElementsByTagName('input');
+
+function switchLayer(layer) {
+    var layerId = layer.target.id;
+    map.setStyle('mapbox://styles/mapbox/' + layerId + '-v9');
+}
+
+for (var i = 0; i < inputs.length; i++) {
+    inputs[i].onclick = switchLayer;
+}
+</script>
 			</section>
 
 		<!-- One -->
@@ -92,7 +104,7 @@
 										<p>maecenas sapien feugiat ex purus</p>
 										<h2>Lorem ipsum dolor</h2>
 									</header>
-									<p> Cras aliquet urna ut sapien tincidunt, quis malesuada elit facilisis. Vestibulum sit amet tortor velit. Nam elementum nibh a libero pharetra elementum. Maecenas feugiat ex purus, quis volutpat lacus placerat malesuada.</p>
+									<p> test 1</p>
 									<footer class="align-center">
 										<a href="#" class="button alt">Learn More</a>
 									</footer>
@@ -110,7 +122,7 @@
 										<p>mattis elementum sapien pretium tellus</p>
 										<h2>Vestibulum sit amet</h2>
 									</header>
-									<p> Cras aliquet urna ut sapien tincidunt, quis malesuada elit facilisis. Vestibulum sit amet tortor velit. Nam elementum nibh a libero pharetra elementum. Maecenas feugiat ex purus, quis volutpat lacus placerat malesuada.</p>
+									<p> test 2</p>
 									<footer class="align-center">
 										<a href="#" class="button alt">Learn More</a>
 									</footer>
@@ -169,9 +181,7 @@
 			<footer id="footer">
 				<div class="container">
 					<ul class="icons">
-						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
 						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
 						<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
 					</ul>
 				</div>
