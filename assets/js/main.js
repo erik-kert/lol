@@ -50,6 +50,7 @@
                 container: 'map',
                     style: 'mapbox://styles/mapbox/streets-v9'
                     
+                    
                 });
                 
                  
