@@ -13,20 +13,6 @@
 	</head>
 	<body>
 
-		<!-- Header -->
-			<header id="header" class="alt">
-				<div class="logo"><a href="index.html">Hielo <span>by TEMPLATED</span></a></div>
-				<a href="#menu">Menu</a>
-			</header>
-
-		<!-- Nav -->
-			<nav id="menu">
-				<ul class="links">
-					<li><a href="index.html">Kodu</a></li>
-					<li><a href="generic.html">Generic</a></li>
-					<li><a href="elements.html">Elements</a></li>
-				</ul>
-			</nav>
 
 		<!-- Banner -->
 			<section class="banner full">
@@ -43,11 +29,7 @@
 </head>
 
 <style>
-    #menu {
-        position: absolute;
-        background: #fff;
-        padding: 10px;
-        font-family: 'Open Sans', sans-serif;
+
     }
 </style>
 
@@ -71,7 +53,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiZXJpa2tlcnQiLCJhIjoiY2o4YTl5MXhlMGFobjMxbzAwa
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/basic-v9',
-    zoom: 9.3,
+    zoom: 9.0,
     center: [-16.466, 28.287]
 });
 
@@ -191,8 +173,7 @@ for (var i = 0; i < inputs.length; i++) {
 			</footer>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
+
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
