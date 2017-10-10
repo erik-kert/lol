@@ -52,8 +52,7 @@
                     
                 });
                 
-                map.scrollZoom.disable();
-                
+                 
             </script>
 
 			}
