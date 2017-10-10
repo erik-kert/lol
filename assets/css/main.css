@@ -27,6 +27,12 @@
 		line-height: 1;
 	}
 
+    title {
+        text-align: center;
+        font-size: 10%;
+        color: black;
+    }
+
 	ol, ul {
 		list-style: none;
 	}
