@@ -1,145 +1,205 @@
-<!DOCTYPE HTML>
-<!--
-	Hielo by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
-<html>
-	<head>
-		<title>Eesi Tenerife Tuurid</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body>
-
-
-		<!-- Banner -->
-			<section class="banner full">
-<head>
-    						<header>
-							<p>A free responsive web site template by <a href="https://templated.co">TEMPLATED</a></p>
-							<h2>Hielo</h2>
-						</header>
-    <meta charset='utf-8' />
-    <title></title>
-    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.40.1/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.40.1/mapbox-gl.css' rel='stylesheet' />
-    <style>
-        body { margin:0; padding:0; }
-        #map { position:absolute; top:0; bottom:0; width:100%; }
+<!DOCTYPE html>
+<html lang="ee">
+    <head>
+        <title>Eesi Tenerife Tuurid</title>
+        <link href="https://fonts.googleapis.com/css?family=Francois+One|Kadwa:700|Roboto:100" rel="stylesheet">
+        
+            <style>
+       #map {
+        height: 600px;
+        width: 100%;
+       }
+                
+       h1 { 
+        font-family: sans-serif;
+        text-align: center;
+        z-index:2;
+        position: absolute;
+        width: 100%;
+        }
+                
+       p4 {
+        font-family: 'Roboto', sans-serif;
+        text-align: center;
+        z-index:2;
+        position: absolute;
+        width: 100%;
+        margin-top: 60px;
+       }
+       button, input, select, textarea {
+    font-family: inherit;
+    font-size: 100%;
+    margin: 0;
+    vertical-align: baseline;
+}
+                
+    input, textarea {
+    font-size: 0.8em;
+    font-family: 'proxima-nova-soft', sans-serif;
+    border: 1px solid #ddd;
+    background: #fff;
+    padding: 0.9em;
+    transition: all 0.3s ease-in-out;
+    width: 20%;
+}
+                
+    button, input, select, textarea {
+    font-family: inherit;
+    font-size: 100%;
+    margin: 0;
+    vertical-align: baseline;
+}
+                
+                
+                
+        button, input {
+    line-height: normal;
+}
     </style>
-</head>
+    </head>
+    
+    <body>
+        <h1>Eesi Tenerife Tuurid</h1>
+        <p4>Saare Tuur</p4>
+        
+  <div id="map"></div>
+  <script>
+    function initMap(){
+      // Map options
+      var options = {
+        zoom:10,
+        center:{lat:28.318549,lng:-16.6291}
+      }
 
-<style>
+      // New map
+      var map = new google.maps.Map(document.getElementById('map'), options);
 
+ 
+
+      /*
+      // Add marker
+      var marker = new google.maps.Marker({
+        position:{lat:42.4668,lng:-70.9495},
+        map:map,
+        icon:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+      });
+
+      var infoWindow = new google.maps.InfoWindow({
+        content:'<h1>Lynn MA</h1>'
+      });
+
+      marker.addListener('click', function(){
+        infoWindow.open(map, marker);
+      });
+      */
+
+      // Array of markers
+      var markers = [
+        {
+          coords:{lat:28.060123,lng:-16.728144},
+          content:'<h1>Las Americas</h1> <img src="https://newmedia.thomson.co.uk/live/vol/2/4f6682ff47e5cad14a247f46da2dae367cee2dbf/1080x608/web/EUROPEMEDITERRANEANSPAINCON_ESPTENERIFEDES_000335PLAYADELASAMERICAS.jpg" width="270px" height="152px"> ',
+          iconImage:'https://icon-icons.com/icons2/865/PNG/32/Citycons_building_icon-icons.com_67935.png',
+          
+        },
+        {
+          coords:{lat:28.221126,lng:-16.628194},
+          content:'<h1>Teide</h1> <img src="https://www.webtenerife.com/es/que-visitar/parque-nacional-del-teide/lists/galeriamultimediatenerife/parque-nacional-teide-teide-roques-garcia.jpg" width="270px" height="152px">',
+          iconImage:'https://www.shareicon.net/data/64x64/2016/11/16/854516_snow_512x512.png' ,
+        },
+        {
+          coords:{lat:28.392150,lng:-16.523577},
+          content:'<h1>La Orotava</h1> <img src="https://saltaconmigo.com/blog/wp-content/uploads/2017/06/AG-ALFOMBRA-CORPUS-OROTAVA-2016-01_120.jpg" width="270px" height="152px">',
+          iconImage:'https://icon-icons.com/icons2/865/PNG/32/Citycons_building_icon-icons.com_67935.png',
+        },
+        {
+          coords:{lat:28.429349,lng:-16.396075},
+          content:'<h1>Esperansa Metsad</h1> <img src="http://www.cyclinglocations.com/wp-content/uploads/2014/08/TF-24-road-tenerife.jpg" width="270px" height="152px">',
+          iconImage:'https://www.shareicon.net/data/32x32/2016/08/18/810609_nature_512x512.png',
+        },
+        {
+          coords:{lat:28.463630,lng:-16.251847},
+          content:'<h1>Santa Cruz</h1> <img src="http://spainatm.com/wp-content/uploads/2014/02/Santa-Cruz-de-Tenerife_Canary-Island.jpg" width="270px" height="152px">',
+          iconImage:'https://icon-icons.com/icons2/865/PNG/32/Citycons_building_icon-icons.com_67935.png',
+        },
+        {
+          coords:{lat:28.352294,lng:-16.370240},
+          content:'<h1>Candelaria</h1> <img src="http://imgs-akamai.mnstatic.com/88/9f/889ff507d041ce7980a3d925b08f8b18.jpg?output-quality=75&output-format=progressive-jpeg&interpolation=lanczos-none&fit=inside%7C980%3A880" width="270px" height="152px">',
+          iconImage:'https://icon-icons.com/icons2/865/PNG/32/Citycons_building_icon-icons.com_67935.png',
+        },
+        {
+          coords:{lat:28.541514,lng:-16.228994},
+          content:'<h1>Anaga Mets</h1> <img src="https://ak8.picdn.net/shutterstock/videos/7518418/thumb/1.jpg?i10c=img.resize(height:160)" width="270px" height="152px">',
+          iconImage:'https://www.shareicon.net/data/32x32/2016/08/18/810609_nature_512x512.png',
+        },
+        {
+          coords:{lat:28.509712,lng:-16.184744},
+          content:'<h1>Teresitase Rand</h1> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Playa_de_Las_Teresitas_en_Santa_Cruz.jpg/1200px-Playa_de_Las_Teresitas_en_Santa_Cruz.jpg" width="270px" height="152px">',
+          iconImage:'http://icons.iconarchive.com/icons/webalys/kameleon.pics/32/Beach-icon.png',   
+        },
+        {
+          coords:{lat:28.487401,lng:-16.315906},
+          content:'<h1>La Laguna</h1> <img src="https://www.holaislascanarias.com/sites/default/files/resource/san_cristobal_de_la_laguna-tenerife_5.jpg" width="270px" height="152px">',
+          iconImage:'https://icon-icons.com/icons2/865/PNG/32/Citycons_building_icon-icons.com_67935.png',
+        },
+        {
+          coords:{lat:28.367143,lng:-16.713757},
+          content:'<h1>Icod De Los Vinos</h1> <img src="https://www.hellocanaryislands.com/sites/default/files/resource/icod_de_los_vinos_old_town_-tenerife_5.jpg" width="270px" height="152px">',
+          iconImage:'https://icon-icons.com/icons2/865/PNG/32/Citycons_building_icon-icons.com_67935.png',
+        },
+        
+        
+      ];
+
+      // Loop through markers
+      for(var i = 0;i < markers.length;i++){
+        // Add marker
+        addMarker(markers[i]);
+      }
+
+      // Add Marker Function
+      function addMarker(props){
+        var marker = new google.maps.Marker({
+          position:props.coords,
+          map:map,
+          //icon:props.iconImage
+        });
+
+        // Check for customicon
+        if(props.iconImage){
+          // Set icon image
+          marker.setIcon(props.iconImage);
+        }
+
+        // Check content
+        if(props.content){
+          var infoWindow = new google.maps.InfoWindow({
+            content:props.content
+          });
+
+          marker.addListener('click', function(){
+            infoWindow.open(map, marker);
+          });
+        }
+      }
     }
-</style>
-
-<div id='map'></div>
-<div id='menu'>
-    <input id='basic' type='radio' name='rtoggle' value='basic' checked='checked'>
-    <label for='basic'>basic</label>
-    <input id='streets' type='radio' name='rtoggle' value='streets'>
-    <label for='streets'>streets</label>
-    <input id='bright' type='radio' name='rtoggle' value='bright'>
-    <label for='bright'>bright</label>
-    <input id='light' type='radio' name='rtoggle' value='light'>
-    <label for='light'>light</label>
-    <input id='dark' type='radio' name='rtoggle' value='dark'>
-    <label for='dark'>dark</label>
-    <input id='satellite' type='radio' name='rtoggle' value='satellite'>
-    <label for='satellite'>satellite</label>
-</div>
-<script>
-mapboxgl.accessToken = 'pk.eyJ1IjoiZXJpa2tlcnQiLCJhIjoiY2o4YTl5MXhlMGFobjMxbzAwamhiMnkyMCJ9.7FN4zVqKFO7J0hy6vnnqQQ';
-var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/basic-v9',
-    zoom: 9.0,
-    center: [-16.466, 28.287]
-});
-
-var layerList = document.getElementById('menu');
-var inputs = layerList.getElementsByTagName('input');
-
-function switchLayer(layer) {
-    var layerId = layer.target.id;
-    map.setStyle('mapbox://styles/mapbox/' + layerId + '-v9');
-}
-
-for (var i = 0; i < inputs.length; i++) {
-    inputs[i].onclick = switchLayer;
-}
-    map.scrollZoom.disable();
-    map.addControl(new mapboxgl.NavigationControl());
-</script>
-                
-                
-			</section>
-
-		<!-- Two -->
-			<section id="two" class="wrapper style3">
-				<div class="inner">
-					<header class="align-center">
-						<p>Nam vel ante sit amet libero scelerisque facilisis eleifend vitae urna</p>
-						<h2>Morbi maximus justo</h2>
-					</header>
-				</div>
-			</section>
-
-		<!-- Three -->
-			<section id="three" class="wrapper style2">
-				<div class="inner">
-					<header class="align-center">
-						<p class="special">Nam vel ante sit amet libero scelerisque facilisis eleifend vitae urna</p>
-						<h2>Morbi maximus justo</h2>
-					</header>
-					<div class="gallery">
-						<div>
-							<div class="image fit">
-								<a href="#"><img src="images/pic01.jpg" alt="" /></a>
-							</div>
-						</div>
-						<div>
-							<div class="image fit">
-								<a href="#"><img src="images/pic02.jpg" alt="" /></a>
-							</div>
-						</div>
-						<div>
-							<div class="image fit">
-								<a href="#"><img src="images/pic03.jpg" alt="" /></a>
-							</div>
-						</div>
-						<div>
-							<div class="image fit">
-								<a href="#"><img src="images/pic04.jpg" alt="" /></a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-
-
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="container">
-					<ul class="icons">
-						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
-					</ul>
-				</div>
-				<div class="copyright">
-					&copy; Untitled. All rights reserved.
-				</div>
-			</footer>
-
-		<!-- Scripts -->
-
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+  </script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7zNnPoeWCNORS-43w8TQthPGndXHckoQ&callback=initMap">
+    </script>
+        
+        <h2>Kes Ma Oleme Ja Mida Ma Teen</h2>
+        <p2>Ma olen ja nii edasi</p2>
+        
+<form method="POST" action="http://formspree.io/erik0kert@gmail.com">
+  <input type="email" name="email" placeholder="Your email">
+  <textarea name="message" placeholder="Your message"></textarea>
+  <button type="submit">Send</button>
+</form>
+        
+        <footer>
+        Copyright &copy; 2017
+    Forest Icon made by freepik from www.flaticon.com 
+        </footer>
+    </body>
+    
 </html>
